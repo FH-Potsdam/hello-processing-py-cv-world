@@ -3,6 +3,10 @@ hello processing py cv world
 
 Some simple sketches for learning processing and openCV
 
+###contour tracking  
+
+![](images/contour_tracking.png)  
+tracks some contours and determines if something is inside of some area.
 
 ##License  
 
