@@ -24,7 +24,7 @@ def setup():
     global opencv
     global poly
     global font
-    font = createFont("Georgia",12)
+    font = createFont("Arial", 12)
     textFont(font)
     textAlign(LEFT)
 #     create a new Video object from our video
@@ -47,13 +47,13 @@ def setup():
 #     if we want to move it later on
     poly = Polygon()
 #     now add some points to the poly
-    for i in range(0,360,30):
+    for i in range(0, 360, 30):
 #         calc x,y in a circle
-        x = int(sin(radians(i))*100 + width/2)
-        y = int(cos(radians(i))*100 + height/2)
+        x = int(sin(radians(i)) * 100 + width / 2)
+        y = int(cos(radians(i)) * 100 + height / 2)
 #         and add those points to the poly
-        poly.addPoint(x,y)
-        
+        poly.addPoint(x, y)
+
 #     we could also do that by hand
 #     but wo wants that
 #     poly.addPoint(width/2 - 50,height/2 - 50)
@@ -61,19 +61,19 @@ def setup():
 #     poly.addPoint(width/2 + 50,height/2 - 50)
 #     poly.addPoint(width/2 + 50,height/2 + 50)
 #     poly.addPoint(width/2 - 50,height/2 + 50)
-    colorMode(HSB,360,100,100,100)
+    colorMode(HSB, 360, 100, 100, 100)
     print "End of def setup():"
 
 # now our loop
 def draw():
 #     set the bg
-    background(0,0,100,100)
+    background(0, 0, 100, 100)
     ##### CAPTURE #####
 #     load the current frame into opencv
     opencv.loadImage(video)
     ##### FILTER #####
-    opencv.gray() # make it grayscale
-    opencv.invert() # invert the colors get it white
+    opencv.gray()  # make it grayscale
+    opencv.invert()  # invert the colors get it white
     # set the threshold
     # everything below RGB 200,200,200 will be black
     opencv.threshold(200)
@@ -85,38 +85,39 @@ def draw():
     ##### ANALYSE #####
     contours = opencv.findContours(True, True)
     # styling
-    fill(360,0,100,100)
+    fill(360, 0, 100, 100)
     # now we draw our polygon
     # not needed for the check
     beginShape()
     for i in range(poly.npoints):
-        vertex(poly.xpoints[i], poly.ypoints[i])    
+        vertex(poly.xpoints[i], poly.ypoints[i])
     endShape(CLOSE)
     ##### DISPLAY #####
-    # now we loop all the contours 
+    # now we loop all the contours
     for c in contours:
         # for each contour we get its bounding box
         r = c.getBoundingBox()
-        # this is the check if the center of the 
+        # this is the check if the center of the
         # bounding box is within the poly
         if poly.contains(r.x, r.y):
             # make it one color
-            fill((360/3)*2,100,100)
+            fill((360 / 3) * 2, 100, 100)
         else:
             # if not make it the other
-            fill((360/3)*3,100,100)
+            fill((360 / 3) * 3, 100, 100)
         # now draw the bounding box
         # but a bit bigger
-        rect(r.x, r.y, r.width*3, r.height*3)
+        rect(r.x, r.y, r.width * 3, r.height * 3)
       # we also could draw all the countours directly
     #
 #     for contour in opencv.findContours():
 #         contour.draw()
-    image(video, 0, 0,video.width/4,video.height/4)
-    fill(0,0,100,100)
-    text("source video",10,15)
-    image(filtered_src, 0, video.height/4,filtered_src.width/4,filtered_src.height/4)
-    text("filterd video",10,video.height/4 + 15)
+    image(video, 0, 0, video.width / 4, video.height / 4)
+    fill(0, 0, 100, 100)
+    text("source video", 10, 15)
+    image(filtered_src, 0, video.height / 4,
+          filtered_src.width / 4, filtered_src.height / 4)
+    text("filterd video", 10, video.height / 4 + 15)
 
 
 def movieEvent(m):

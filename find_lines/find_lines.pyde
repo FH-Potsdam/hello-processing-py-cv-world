@@ -19,7 +19,7 @@ def setup():
     global opencv
     global poly
     global font
-    font = createFont("Georgia", 12)
+    font = createFont("Arial", 12)
     textFont(font)
     textAlign(LEFT)
 #     create a new Video object from our video
@@ -36,7 +36,7 @@ def setup():
     video.play()
 
     colorMode(HSB, 360, 100, 100, 100)
-    background(0,0,100)
+    background(0, 0, 100)
     print "End of def setup():"
 
 # now our loop
@@ -65,17 +65,18 @@ def draw():
 
     ##### DISPLAY #####
     # now we loop all the lines
-    stroke(0,0,0,100)
+    stroke(0, 0, 0, 100)
     for ln in lines:
         # only vertial lines
         if (ln.angle >= radians(0) and ln.angle < radians(1)):
             line(ln.start.x, ln.start.y, ln.end.x, ln.end.y)
     # display the sources
-    image(video, 0, 0,video.width/4,video.height/4)
-    fill(0,0,100,100)
-    text("source video",10,15)
-    image(filtered_src, 0, video.height/4,filtered_src.width/4,filtered_src.height/4)
-    text("filterd video",10,video.height/4 + 15)
+    image(video, 0, 0, video.width / 4, video.height / 4)
+    fill(0, 0, 100, 100)
+    text("source video", 10, 15)
+    image(filtered_src, 0, video.height / 4,
+          filtered_src.width / 4, filtered_src.height / 4)
+    text("filterd video", 10, video.height / 4 + 15)
 
 
 def movieEvent(m):
