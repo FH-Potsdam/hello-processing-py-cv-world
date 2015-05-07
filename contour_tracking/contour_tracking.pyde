@@ -14,6 +14,7 @@ from java.awt import Polygon
 video = None
 opencv = None
 poly = None
+font = None
 
 # setup is run once
 def setup():
@@ -22,6 +23,10 @@ def setup():
     global video
     global opencv
     global poly
+    global font
+    font = createFont("Georgia",12)
+    textFont(font)
+    textAlign(LEFT)
 #     create a new Video object from our video
     video = Movie(this, "flock.mov")
 #     create a new opencv object
@@ -56,12 +61,13 @@ def setup():
 #     poly.addPoint(width/2 + 50,height/2 - 50)
 #     poly.addPoint(width/2 + 50,height/2 + 50)
 #     poly.addPoint(width/2 - 50,height/2 + 50)
+    colorMode(HSB,360,100,100,100)
     print "End of def setup():"
 
 # now our loop
 def draw():
 #     set the bg
-    background(255)
+    background(0,0,100,100)
     ##### CAPTURE #####
 #     load the current frame into opencv
     opencv.loadImage(video)
@@ -79,7 +85,7 @@ def draw():
     ##### ANALYSE #####
     contours = opencv.findContours(True, True)
     # styling
-    fill(255)
+    fill(360,0,100,100)
     # now we draw our polygon
     # not needed for the check
     beginShape()
@@ -95,10 +101,10 @@ def draw():
         # bounding box is within the poly
         if poly.contains(r.x, r.y):
             # make it one color
-            fill(255,0,0)
+            fill((360/3)*2,100,100)
         else:
             # if not make it the other
-            fill(0,255,0)
+            fill((360/3)*3,100,100)
         # now draw the bounding box
         # but a bit bigger
         rect(r.x, r.y, r.width*3, r.height*3)
@@ -107,7 +113,10 @@ def draw():
 #     for contour in opencv.findContours():
 #         contour.draw()
     image(video, 0, 0,video.width/4,video.height/4)
+    fill(0,0,100,100)
+    text("source video",10,15)
     image(filtered_src, 0, video.height/4,filtered_src.width/4,filtered_src.height/4)
+    text("filterd video",10,video.height/4 + 15)
 
 
 def movieEvent(m):

@@ -8,6 +8,12 @@ Some simple sketches for learning processing and openCV
 ![](images/contour_tracking.png)  
 tracks some contours and determines if something is inside of some area.
 
+
+###find lines 
+
+![](images/find_lines.png)  
+looks for vertical lines in a video.  
+
 ##License  
 
 Copyright (c) 2015 Fabian Moron Zirfas & FH-Potsdam  
