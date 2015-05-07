@@ -70,9 +70,12 @@ def draw():
         # only vertial lines
         if (ln.angle >= radians(0) and ln.angle < radians(1)):
             line(ln.start.x, ln.start.y, ln.end.x, ln.end.y)
-#         contour.draw()
-#     image(video, 0, 0,video.width,video.height)
-#     image(filtered_src, 0, 0,video.width,video.height)
+    # display the sources
+    image(video, 0, 0,video.width/4,video.height/4)
+    fill(0,0,100,100)
+    text("source video",10,15)
+    image(filtered_src, 0, video.height/4,filtered_src.width/4,filtered_src.height/4)
+    text("filterd video",10,video.height/4 + 15)
 
 
 def movieEvent(m):
