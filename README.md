@@ -14,6 +14,12 @@ tracks some contours and determines if something is inside of some area.
 ![](images/find_lines.png)  
 looks for vertical lines in a video.  
 
+
+###background subtraction
+
+![](images/background_subtraction.png)
+
+looks for the latest change in the video. Contours get sorted by size displays only the biggest.  
 ##License  
 
 Copyright (c) 2015 Fabian Moron Zirfas & FH-Potsdam  
