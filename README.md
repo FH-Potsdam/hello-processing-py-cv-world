@@ -27,6 +27,14 @@ looks for the latest change in the video. Contours get sorted by size displays o
 
 Shows how to filter videos and displays the result.
 
+
+###brightness tracking  
+
+![](images/brightness_tracking.png)
+
+This sketch looks for the brightest point in a video
+
+
 ###empty example  
 
 ![](images/empty_example.png)  
