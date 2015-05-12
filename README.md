@@ -20,6 +20,14 @@ looks for vertical lines in a video.
 ![](images/background_subtraction.png)
 
 looks for the latest change in the video. Contours get sorted by size displays only the biggest.  
+
+###filtering and display
+
+![](images/filtering_and_display.png)  
+
+Shows how to filter videos and displays the result.
+
+
 ##License  
 
 Copyright (c) 2015 Fabian Moron Zirfas & FH-Potsdam  
