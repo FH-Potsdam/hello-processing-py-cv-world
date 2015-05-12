@@ -27,6 +27,11 @@ looks for the latest change in the video. Contours get sorted by size displays o
 
 Shows how to filter videos and displays the result.
 
+###empty example  
+
+![](images/empty_example.png)  
+
+A basic sketch to get you started  
 
 ##License  
 
