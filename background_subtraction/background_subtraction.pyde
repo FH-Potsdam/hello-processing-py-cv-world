@@ -13,7 +13,6 @@ def setup():
     size(960, 540, P2D)
     video = Movie(this, "dummy.mov")
     opencv = OpenCV(this, 960, 540)
-
     opencv.startBackgroundSubtraction(5, 3, 0.5)
 
     video.loop()
@@ -35,18 +34,20 @@ def draw():
     stroke(0)
     strokeWeight(1)
     
-    contours = opencv.findContours(False,True) 
+    contours = opencv.findContours(False, True) 
     if contours.size() > 0:
-        r = contours.get(0).getBoundingBox()
-        ellipse(r.x, r.y, 10, 10)
-        points.append([r.x, r.y])
+        rectangle = contours.get(0).getBoundingBox()
+        
+#         ellipse(rectangle.x, rectangle.y, 10, 10)
+        
+        points.append([rectangle.x, rectangle.y])
 
 #     for i in range(0,len(points)):
 #         ellipse(points[i][0], points[i][1], 5, 5)   
             
 #         contours.get(0).draw()
-#     for contour in opencv.findContours(False,True):
-#         contour.draw()
+    for contour in opencv.findContours(False,True):
+        contour.draw()
 
 
 def movieEvent(m):

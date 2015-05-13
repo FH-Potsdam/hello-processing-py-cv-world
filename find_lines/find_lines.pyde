@@ -17,7 +17,6 @@ def setup():
 #     using the global objects
     global video
     global opencv
-    global poly
     global font
     font = createFont("Arial", 12)
     textFont(font)
