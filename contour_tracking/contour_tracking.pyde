@@ -66,8 +66,6 @@ def setup():
 
 # now our loop
 def draw():
-#     set the bg
-    background(0, 0, 100, 100)
     ##### CAPTURE #####
 #     load the current frame into opencv
     opencv.loadImage(video)
@@ -84,6 +82,10 @@ def draw():
     # find the contours
     ##### ANALYSE #####
     contours = opencv.findContours(True, True)
+    ##### DISPLAY #####
+
+    # set the bg
+    background(0, 0, 100, 100)
     # styling
     fill(360, 0, 100, 100)
     # now we draw our polygon
@@ -92,7 +94,6 @@ def draw():
     for i in range(poly.npoints):
         vertex(poly.xpoints[i], poly.ypoints[i])
     endShape(CLOSE)
-    ##### DISPLAY #####
     # now we loop all the contours
     for c in contours:
         # for each contour we get its bounding box

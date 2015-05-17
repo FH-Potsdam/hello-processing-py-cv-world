@@ -1,5 +1,5 @@
 """
-look for the brightest point int the video
+Simple sketch that uses the saturation channel
 """
 
 # add the needed libs
@@ -17,12 +17,12 @@ def setup():
     global video
     global opencv
 #     create a new Video object from our video
-    video = Movie(this, "dummy.mov")
+    video = Movie(this, "slime1.mov")
 #     create a new opencv object
 #     in the size of the video
-    opencv = OpenCV(this, 960, 540)
+    opencv = OpenCV(this, 640, 480)
 #     setup size of the sketch
-    size(960, 540)
+    size(640 * 2, 480)
 #     now loop and play the video
     video.loop()
     video.play()
@@ -31,24 +31,35 @@ def setup():
 
 # now our loop
 def draw():
-
+#     set the bg
+    background(0, 0, 100, 100)
     ##### CAPTURE #####
 #     load the current frame into opencv
     opencv.loadImage(video)
     ##### FILTER #####
-
+    opencv.useColor(HSB)
+    opencv.setGray(opencv.getS().clone())
+    
+#     opencv.gray()
+    opencv.invert()
+#     opencv.contrast(4)
+    filtered_image = opencv.getSnapshot()
     ##### ANALYSE #####
-    # look for the brightest point
-    brightest_point = opencv.max()
+    contours = opencv.findContours(False, True)
 
     ##### DISPLAY #####
-    #     set the bg
-    background(0, 0, 100, 100)
-    image(video, 0, 0, video.width , video.height)
+    image(video, 0, 0, video.width, video.height)
+    image(filtered_image, video.width, 0,
+          filtered_image.width, filtered_image.height)
     noFill()
-    stroke(60,100,100,100)
-    
-    ellipse(brightest_point.x, brightest_point.y, 20,20)
+    stroke(60, 100, 100, 100)
+    strokeWeight(2)
+    smooth()
+    for contour in contours:
+        r = contour.getBoundingBox()
+        if r.width < 200:
+#         rect(r.x + video.width, r.y,r.width, r.height)
+            contour.draw()
 
 
 def movieEvent(m):

@@ -48,7 +48,7 @@ def draw():
     grey_image = opencv.getSnapshot()
     opencv.contrast(3)  # raise contrast
     contrast_image = opencv.getSnapshot()
-    opencv.threshold(240)  # clip all below 200
+    opencv.threshold(240)  # clip all below 240
     threshold_image = opencv.getSnapshot()
     ##### ANALYSE #####
     # do some nasty detection here
