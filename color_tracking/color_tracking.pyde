@@ -75,7 +75,7 @@ def mousePressed():
     s = saturation(pixels[mouseX + mouseY * width])
     b = brightness(pixels[mouseX + mouseY * width])
 
-    print "H: ", map(h,0,360,0,255)
+    print "H: ", h
     print "S: ", s
     print "B: ", b
     colorpicker = color(h,s,b,100)
