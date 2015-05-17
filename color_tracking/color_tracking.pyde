@@ -1,6 +1,5 @@
 """
-look for ta specific color in the video
-not working that well right now
+look for ta specific color in the video !Not working that well right now!
 """
 
 # add the needed libs
@@ -68,7 +67,7 @@ def draw():
 
 
 def mousePressed():
-    
+
     global colorpicker
     loadPixels()
     h = hue(pixels[mouseX + mouseY * width])

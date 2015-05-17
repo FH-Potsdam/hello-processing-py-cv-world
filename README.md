@@ -3,43 +3,52 @@ hello processing py cv world
 
 Some simple sketches for learning processing and openCV
 
-###contour tracking  
 
+##background_subtraction
+![](images/background_subtraction.png)  
+How to use background subtraction  
+
+------------
+
+##brightness_tracking
+![](images/brightness_tracking.png)  
+look for the brightest point int the video  
+
+
+------------
+
+##color_tracking
+![](images/color_tracking.png)  
+look for ta specific color in the video !Not working that well right now!  
+
+------------
+
+##contour_tracking
 ![](images/contour_tracking.png)  
-tracks some contours and determines if something is inside of some area.
+Simple sketch that tracks some spots in a video  
 
+------------
 
-###find lines 
-
-![](images/find_lines.png)  
-looks for vertical lines in a video.  
-
-
-###background subtraction
-
-![](images/background_subtraction.png)
-
-looks for the latest change in the video. Contours get sorted by size displays only the biggest.  
-
-###filtering and display
-
-![](images/filtering_and_display.png)  
-
-Shows how to filter videos and displays the result.
-
-
-###brightness tracking  
-
-![](images/brightness_tracking.png)
-
-This sketch looks for the brightest point in a video
-
-
-###empty example  
-
+##empty_example
 ![](images/empty_example.png)  
+Simple empty example  
 
-A basic sketch to get you started  
+------------
+##filtering_and_display
+![](images/filtering_and_display.png)  
+Simple empty sketch  
+
+------------
+
+##find_lines
+![](images/find_lines.png)  
+Simple sketch that looks for lines in a video  
+
+------------
+
+##using_saturation_channel
+![](images/using_saturation_channel.png)  
+Simple sketch that uses the saturation channel  
 
 ##License  
 

@@ -31,8 +31,7 @@ def setup():
 
 # now our loop
 def draw():
-#     set the bg
-    background(0, 0, 100, 100)
+
     ##### CAPTURE #####
 #     load the current frame into opencv
     opencv.loadImage(video)
@@ -44,6 +43,8 @@ def draw():
     contours = opencv.findContours(True, True)
 
     ##### DISPLAY #####
+    #     set the bg
+    background(0, 0, 100, 100)
     image(filtered_image, 0, 0, filtered_image.width , filtered_image.height)
     noFill()
     stroke(60,100,100,100)

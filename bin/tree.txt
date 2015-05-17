@@ -1,0 +1,49 @@
+.
+├── README.md
+├── background_subtraction
+│   ├── background_subtraction.pyde
+│   └── data
+│       └── dummy.mov
+├── bin
+│   ├── README.md
+│   └── tree.txt
+├── brightness_tracking
+│   ├── brightness_tracking.pyde
+│   └── data
+│       └── dummy.mov
+├── color_tracking
+│   ├── color_tracking.pyde
+│   └── data
+│       └── dummy.mov
+├── contour_tracking
+│   ├── contour_tracking.pyde
+│   ├── data
+│   │   └── flock.mov
+│   └── sketch.properties
+├── empty_example
+│   ├── data
+│   │   └── dummy.mov
+│   └── empty_example.pyde
+├── filtering_and_display
+│   ├── data
+│   │   └── dummy.mov
+│   └── filtering_and_display.pyde
+├── find_lines
+│   ├── data
+│   │   └── dummy.mov
+│   ├── find_lines.pyde
+│   └── sketch.properties
+├── images
+│   ├── background_subtraction.png
+│   ├── brightness_tracking.png
+│   ├── contour_tracking.png
+│   ├── empty_example.png
+│   ├── filtering_and_display.png
+│   └── find_lines.png
+└── using_saturation_channel
+    ├── data
+    │   ├── dummy.mov
+    │   └── slime1.mov
+    └── using_saturation_channel.pyde
+
+18 directories, 28 files
